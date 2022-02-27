@@ -433,7 +433,7 @@ class _DespachosRefrigeradoWidgetState
                                   desposte =
                                       await InventarioDisponibleRefrigeradoCall
                                           .call(
-                                    cliente: FFAppState().usuarioId,
+                                    cliente: FFAppState().usuarioId.toString(),
                                     inicio: fecIniController.text,
                                     fin: fecFinController.text,
                                   );
@@ -497,7 +497,7 @@ class _DespachosRefrigeradoWidgetState
                   padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 5),
                   child: FutureBuilder<ApiCallResponse>(
                     future: InventarioDisponibleRefrigeradoCall.call(
-                      cliente: FFAppState().usuarioId,
+                      cliente: FFAppState().usuarioId.toString(),
                       inicio: fecIniController.text,
                       fin: fecFinController.text,
                     ),

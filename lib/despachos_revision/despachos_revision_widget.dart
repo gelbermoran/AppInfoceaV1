@@ -430,7 +430,7 @@ class _DespachosRevisionWidgetState extends State<DespachosRevisionWidget> {
                                 ),
                                 onPressed: () async {
                                   desposte = await RevisionDespachoCall.call(
-                                    cliente: FFAppState().usuarioId,
+                                    cliente: FFAppState().usuarioId.toString(),
                                     inicio: fecIniController.text,
                                     fin: fecFinController.text,
                                   );
@@ -494,7 +494,7 @@ class _DespachosRevisionWidgetState extends State<DespachosRevisionWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 5),
                   child: FutureBuilder<ApiCallResponse>(
                     future: RevisionDespachoCall.call(
-                      cliente: FFAppState().usuarioId,
+                      cliente: FFAppState().usuarioId.toString(),
                       inicio: fecIniController.text,
                       fin: fecFinController.text,
                     ),

@@ -392,7 +392,7 @@ class _RendimientoCanalWidgetState extends State<RendimientoCanalWidget> {
                                   rendimientoCanales =
                                       await RendimientoCanalOrdenesProduccionCall
                                           .call(
-                                    cliente: FFAppState().usuarioId,
+                                    cliente: FFAppState().usuarioId.toString(),
                                     inicio: fecIniController.text,
                                     fin: fecFinController.text,
                                   );
@@ -430,7 +430,7 @@ class _RendimientoCanalWidgetState extends State<RendimientoCanalWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 10),
                   child: FutureBuilder<ApiCallResponse>(
                     future: RendimientoCanalOrdenesProduccionCall.call(
-                      cliente: FFAppState().usuarioId,
+                      cliente: FFAppState().usuarioId.toString(),
                       inicio: fecIniController.text,
                       fin: fecFinController.text,
                     ),
@@ -886,7 +886,7 @@ class _RendimientoCanalWidgetState extends State<RendimientoCanalWidget> {
                                                         orden: getJsonField(
                                                           ordenesItem,
                                                           r'''$.orden_produccion''',
-                                                        ),
+                                                        ).toString(),
                                                       ),
                                                     ),
                                                   );
@@ -915,7 +915,7 @@ class _RendimientoCanalWidgetState extends State<RendimientoCanalWidget> {
                                                         orden: getJsonField(
                                                           ordenesItem,
                                                           r'''$.orden_produccion''',
-                                                        ),
+                                                        ).toString(),
                                                       ),
                                                     ),
                                                   );

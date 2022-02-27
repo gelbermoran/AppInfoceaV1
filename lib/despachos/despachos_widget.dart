@@ -438,7 +438,7 @@ class _DespachosWidgetState extends State<DespachosWidget> {
                                   desposte =
                                       await InventarioDisponibleRefrigeradoCall
                                           .call(
-                                    cliente: FFAppState().usuarioId,
+                                    cliente: FFAppState().usuarioId.toString(),
                                     inicio: fecIniController.text,
                                     fin: fecFinController.text,
                                   );
@@ -494,7 +494,7 @@ class _DespachosWidgetState extends State<DespachosWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 5),
                   child: FutureBuilder<ApiCallResponse>(
                     future: InventarioDisponibleCalienteCall.call(
-                      cliente: FFAppState().usuarioId,
+                      cliente: FFAppState().usuarioId.toString(),
                       inicio: fecIniController.text,
                       fin: fecFinController.text,
                     ),

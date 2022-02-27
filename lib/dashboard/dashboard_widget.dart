@@ -490,7 +490,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                       Expanded(
                         child: FutureBuilder<ApiCallResponse>(
                           future: NotificacionesCall.call(
-                            cliente: FFAppState().usuarioId,
+                            cliente: FFAppState().usuarioId.toString(),
                           ),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.

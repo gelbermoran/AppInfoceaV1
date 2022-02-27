@@ -14,7 +14,7 @@ class PesajePieAnimalesWidget extends StatefulWidget {
     this.lote,
   }) : super(key: key);
 
-  final int lote;
+  final String lote;
 
   @override
   _PesajePieAnimalesWidgetState createState() =>
@@ -170,10 +170,7 @@ class _PesajePieAnimalesWidgetState extends State<PesajePieAnimalesWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           10, 0, 0, 0),
                                       child: Text(
-                                        valueOrDefault<String>(
-                                          widget.lote.toString(),
-                                          '0',
-                                        ),
+                                        widget.lote,
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .title1

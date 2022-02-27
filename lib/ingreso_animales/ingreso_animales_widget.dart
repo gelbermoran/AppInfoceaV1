@@ -407,7 +407,7 @@ class _IngresoAnimalesWidgetState extends State<IngresoAnimalesWidget> {
                                   ingresoVehiculos =
                                       await RendimientoCanalOrdenesProduccionCall
                                           .call(
-                                    cliente: FFAppState().usuarioId,
+                                    cliente: FFAppState().usuarioId.toString(),
                                     inicio: fecIniController.text,
                                     fin: fecFinController.text,
                                   );
@@ -464,7 +464,7 @@ class _IngresoAnimalesWidgetState extends State<IngresoAnimalesWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 10),
                   child: FutureBuilder<ApiCallResponse>(
                     future: IngresoVehiculosCall.call(
-                      cliente: FFAppState().usuarioId,
+                      cliente: FFAppState().usuarioId.toString(),
                       inicio: fecIniController.text,
                       fin: fecFinController.text,
                     ),
@@ -1036,7 +1036,7 @@ class _IngresoAnimalesWidgetState extends State<IngresoAnimalesWidget> {
                                                         lote: getJsonField(
                                                           ingresosItem,
                                                           r'''$.lote_ingreso''',
-                                                        ),
+                                                        ).toString(),
                                                       ),
                                                     ),
                                                   );
@@ -1065,7 +1065,7 @@ class _IngresoAnimalesWidgetState extends State<IngresoAnimalesWidget> {
                                                         lote: getJsonField(
                                                           ingresosItem,
                                                           r'''$.lote_ingreso''',
-                                                        ),
+                                                        ).toString(),
                                                       ),
                                                     ),
                                                   );

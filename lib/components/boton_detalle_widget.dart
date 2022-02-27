@@ -36,7 +36,7 @@ class _BotonDetalleWidgetState extends State<BotonDetalleWidget> {
               context,
               MaterialPageRoute(
                 builder: (context) => PesajeTotalLoteWidget(
-                  lote: widget.lote,
+                  lote: widget.lote.toString(),
                 ),
               ),
             );

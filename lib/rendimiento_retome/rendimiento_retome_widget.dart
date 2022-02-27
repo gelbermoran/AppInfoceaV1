@@ -13,7 +13,7 @@ class RendimientoRetomeWidget extends StatefulWidget {
     this.orden,
   }) : super(key: key);
 
-  final int orden;
+  final String orden;
 
   @override
   _RendimientoRetomeWidgetState createState() =>
@@ -198,10 +198,7 @@ class _RendimientoRetomeWidgetState extends State<RendimientoRetomeWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   10, 0, 0, 0),
                                           child: Text(
-                                            valueOrDefault<String>(
-                                              widget.orden.toString(),
-                                              '0',
-                                            ),
+                                            widget.orden,
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .title1

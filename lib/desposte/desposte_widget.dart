@@ -389,7 +389,7 @@ class _DesposteWidgetState extends State<DesposteWidget> {
                                 onPressed: () async {
                                   apiCallOutput =
                                       await OrdenesDesposteCall.call(
-                                    cliente: FFAppState().usuarioId,
+                                    cliente: FFAppState().usuarioId.toString(),
                                     inicio: fecIniController.text,
                                     fin: fecFinController.text,
                                   );
@@ -445,7 +445,7 @@ class _DesposteWidgetState extends State<DesposteWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 10),
                   child: FutureBuilder<ApiCallResponse>(
                     future: OrdenesDesposteCall.call(
-                      cliente: FFAppState().usuarioId,
+                      cliente: FFAppState().usuarioId.toString(),
                       inicio: fecIniController.text,
                       fin: fecFinController.text,
                     ),

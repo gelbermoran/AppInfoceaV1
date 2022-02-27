@@ -399,7 +399,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                         ),
                         child: FutureBuilder<ApiCallResponse>(
                           future: TotalOperacionesCall.call(
-                            cliente: FFAppState().usuarioId,
+                            cliente: FFAppState().usuarioId.toString(),
                             operacion: 'ingreso',
                           ),
                           builder: (context, snapshot) {
@@ -491,7 +491,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                         ),
                         child: FutureBuilder<ApiCallResponse>(
                           future: TotalOperacionesCall.call(
-                            cliente: FFAppState().usuarioId,
+                            cliente: FFAppState().usuarioId.toString(),
                             operacion: 'rendimiento',
                           ),
                           builder: (context, snapshot) {
@@ -580,7 +580,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                         ),
                         child: FutureBuilder<ApiCallResponse>(
                           future: TotalOperacionesCall.call(
-                            cliente: FFAppState().usuarioId,
+                            cliente: FFAppState().usuarioId.toString(),
                             operacion: 'decomiso',
                           ),
                           builder: (context, snapshot) {
@@ -664,7 +664,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                         ),
                         child: FutureBuilder<ApiCallResponse>(
                           future: TotalOperacionesCall.call(
-                            cliente: FFAppState().usuarioId,
+                            cliente: FFAppState().usuarioId.toString(),
                             operacion: 'desposte',
                           ),
                           builder: (context, snapshot) {
@@ -748,7 +748,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                         ),
                         child: FutureBuilder<ApiCallResponse>(
                           future: TotalOperacionesCall.call(
-                            cliente: FFAppState().usuarioId,
+                            cliente: FFAppState().usuarioId.toString(),
                             operacion: 'despacho',
                           ),
                           builder: (context, snapshot) {

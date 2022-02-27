@@ -116,7 +116,7 @@ class _NotificacionesWidgetState extends State<NotificacionesWidget> {
                 ),
                 FutureBuilder<ApiCallResponse>(
                   future: NotificacionesXFechasCall.call(
-                    cliente: FFAppState().usuarioId,
+                    cliente: FFAppState().usuarioId.toString(),
                     inicio: valueOrDefault<String>(
                       functions.fechasSemana('inicio'),
                       '2022-02-12',

@@ -87,7 +87,7 @@ class LoginAPICeagrodexCall {
 
 class IngresoVehiculosCall {
   static Future<ApiCallResponse> call({
-    int cliente = 1,
+    String cliente = '',
     String inicio = '2021-11-17 00:00',
     String fin = '2022-02-31 23:59',
   }) {
@@ -108,7 +108,7 @@ class IngresoVehiculosCall {
 
 class PesajoTotalXLoteCall {
   static Future<ApiCallResponse> call({
-    int lote = 100,
+    String lote = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'PesajoTotalXLote',
@@ -125,7 +125,7 @@ class PesajoTotalXLoteCall {
 
 class PesajePieAnimalesCall {
   static Future<ApiCallResponse> call({
-    int lote = 100,
+    String lote = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'PesajePieAnimales',
@@ -142,7 +142,7 @@ class PesajePieAnimalesCall {
 
 class RendimientoCanalOrdenesProduccionCall {
   static Future<ApiCallResponse> call({
-    int cliente = 1,
+    String cliente = '',
     String inicio = '2021-11-17 00:00',
     String fin = '2022-12-31 23:59',
   }) {
@@ -163,7 +163,7 @@ class RendimientoCanalOrdenesProduccionCall {
 
 class RendimientoCanalXCanalCall {
   static Future<ApiCallResponse> call({
-    int orden = 100,
+    String orden = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'RendimientoCanalXCanal',
@@ -180,7 +180,7 @@ class RendimientoCanalXCanalCall {
 
 class RetomeSubproductoCall {
   static Future<ApiCallResponse> call({
-    int orden = 100,
+    String orden = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'RetomeSubproducto',
@@ -198,7 +198,7 @@ class RetomeSubproductoCall {
 
 class DecomisosSacrificiosCall {
   static Future<ApiCallResponse> call({
-    int cliente = 1,
+    String cliente = '',
     String inicio = '2021-11-17 00:00',
     String fin = '2022-12-31 23:59',
   }) {
@@ -219,7 +219,7 @@ class DecomisosSacrificiosCall {
 
 class DecomisosDesposteCall {
   static Future<ApiCallResponse> call({
-    int cliente = 1,
+    String cliente = '',
     String inicio = '2021-11-17 00:00',
     String fin = '2022-12-31 23:59',
   }) {
@@ -240,7 +240,7 @@ class DecomisosDesposteCall {
 
 class InventarioDisponibleRefrigeradoCall {
   static Future<ApiCallResponse> call({
-    int cliente = 1,
+    String cliente = '',
     String inicio = '2021-11-17 00:00',
     String fin = '2022-12-31 23:59',
   }) {
@@ -261,7 +261,7 @@ class InventarioDisponibleRefrigeradoCall {
 
 class InventarioDisponibleCalienteCall {
   static Future<ApiCallResponse> call({
-    int cliente = 1,
+    String cliente = '',
     String inicio = '2021-11-17 00:00',
     String fin = '2022-12-31 23:59',
   }) {
@@ -282,7 +282,7 @@ class InventarioDisponibleCalienteCall {
 
 class RevisionDespachoCall {
   static Future<ApiCallResponse> call({
-    int cliente = 1,
+    String cliente = '',
     String inicio = '2021-11-17 00:00',
     String fin = '2022-12-31 23:59',
   }) {
@@ -303,7 +303,7 @@ class RevisionDespachoCall {
 
 class OrdenesDesposteCall {
   static Future<ApiCallResponse> call({
-    int cliente = 1,
+    String cliente = '',
     String inicio = '2021-11-17 00:00',
     String fin = '2022-12-31 23:59',
   }) {
@@ -324,7 +324,7 @@ class OrdenesDesposteCall {
 
 class DetallesDesposteCall {
   static Future<ApiCallResponse> call({
-    int orden = 17,
+    String orden = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'DetallesDesposte',
@@ -341,7 +341,7 @@ class DetallesDesposteCall {
 
 class DesposteViscerasCall {
   static Future<ApiCallResponse> call({
-    int orden = 17,
+    String orden = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'DesposteVisceras',
@@ -358,7 +358,7 @@ class DesposteViscerasCall {
 
 class DetallesViscerasCall {
   static Future<ApiCallResponse> call({
-    int orden = 17,
+    String orden = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'DetallesVisceras',
@@ -375,7 +375,7 @@ class DetallesViscerasCall {
 
 class AnimalesDesposteCall {
   static Future<ApiCallResponse> call({
-    int orden = 17,
+    String orden = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'AnimalesDesposte',
@@ -392,7 +392,7 @@ class AnimalesDesposteCall {
 
 class NotificacionesCall {
   static Future<ApiCallResponse> call({
-    int cliente = 2,
+    String cliente = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'Notificaciones',
@@ -409,7 +409,7 @@ class NotificacionesCall {
 
 class DetalleNotificacionCall {
   static Future<ApiCallResponse> call({
-    int notificacion = 1,
+    String notificacion = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'DetalleNotificacion',
@@ -426,7 +426,7 @@ class DetalleNotificacionCall {
 
 class TotalOperacionesCall {
   static Future<ApiCallResponse> call({
-    int cliente = 1,
+    String cliente = '',
     String operacion = 'ingreso',
   }) {
     return ApiManager.instance.makeApiCall(
@@ -445,7 +445,7 @@ class TotalOperacionesCall {
 
 class NotificacionesXFechasCall {
   static Future<ApiCallResponse> call({
-    int cliente = 2,
+    String cliente = '',
     String inicio = '2022-02-12',
     String fin = '2022-02-12',
   }) {

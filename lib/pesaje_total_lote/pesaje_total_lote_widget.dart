@@ -13,7 +13,7 @@ class PesajeTotalLoteWidget extends StatefulWidget {
     this.lote,
   }) : super(key: key);
 
-  final int lote;
+  final String lote;
 
   @override
   _PesajeTotalLoteWidgetState createState() => _PesajeTotalLoteWidgetState();
@@ -193,7 +193,7 @@ class _PesajeTotalLoteWidgetState extends State<PesajeTotalLoteWidget> {
                                             10, 0, 0, 0),
                                         child: Text(
                                           valueOrDefault<String>(
-                                            widget.lote.toString(),
+                                            widget.lote,
                                             '0',
                                           ),
                                           textAlign: TextAlign.center,

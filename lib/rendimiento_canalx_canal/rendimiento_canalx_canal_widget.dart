@@ -14,7 +14,7 @@ class RendimientoCanalxCanalWidget extends StatefulWidget {
     this.orden,
   }) : super(key: key);
 
-  final int orden;
+  final String orden;
 
   @override
   _RendimientoCanalxCanalWidgetState createState() =>
@@ -171,10 +171,7 @@ class _RendimientoCanalxCanalWidgetState
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           10, 0, 0, 0),
                                       child: Text(
-                                        valueOrDefault<String>(
-                                          widget.orden.toString(),
-                                          'NA',
-                                        ),
+                                        widget.orden,
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .title1

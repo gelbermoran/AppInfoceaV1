@@ -416,7 +416,7 @@ class _DecomisosWidgetState extends State<DecomisosWidget> {
                                 onPressed: () async {
                                   decomisoSacrificio =
                                       await DecomisosSacrificiosCall.call(
-                                    cliente: FFAppState().usuarioId,
+                                    cliente: FFAppState().usuarioId.toString(),
                                     inicio: fecIniController.text,
                                     fin: fecFinController.text,
                                   );
@@ -472,7 +472,7 @@ class _DecomisosWidgetState extends State<DecomisosWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 10),
                   child: FutureBuilder<ApiCallResponse>(
                     future: DecomisosSacrificiosCall.call(
-                      cliente: FFAppState().usuarioId,
+                      cliente: FFAppState().usuarioId.toString(),
                       inicio: fecIniController.text,
                       fin: fecFinController.text,
                     ),
