@@ -12,6 +12,7 @@ import 'rendimiento_canal/rendimiento_canal_widget.dart';
 import 'decomisos/decomisos_widget.dart';
 import 'despachos/despachos_widget.dart';
 import 'desposte/desposte_widget.dart';
+import 'new_ingreso_animales/new_ingreso_animales_widget.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'flutter_flow/flutter_flow_util.dart';
@@ -96,6 +97,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'Decomisos': DecomisosWidget(),
       'Despachos': DespachosWidget(),
       'Desposte': DesposteWidget(),
+      'newIngresoAnimales': NewIngresoAnimalesWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
@@ -192,6 +194,20 @@ class _NavBarPageState extends State<NavBarPage> {
                 Icon(
                   Icons.content_cut_rounded,
                   color: currentIndex == 5
+                      ? FlutterFlowTheme.of(context).primaryColor
+                      : Color(0xFFC2CAD9),
+                  size: 24,
+                ),
+              ],
+            ),
+          ),
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.threed_rotation_sharp,
+                  color: currentIndex == 6
                       ? FlutterFlowTheme.of(context).primaryColor
                       : Color(0xFFC2CAD9),
                   size: 24,
