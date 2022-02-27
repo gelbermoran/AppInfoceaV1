@@ -291,7 +291,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        NavBarPage(initialPage: 'Desposte'),
+                                        NavBarPage(initialPage: 'Despachos'),
                                   ),
                                 );
                               },
@@ -403,7 +403,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        NavBarPage(initialPage: 'Despachos'),
+                                        NavBarPage(initialPage: 'Desposte'),
                                   ),
                                 );
                               },

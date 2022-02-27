@@ -689,7 +689,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        NavBarPage(initialPage: 'Despachos'),
+                                        NavBarPage(initialPage: 'Desposte'),
                                   ),
                                 );
                               },
@@ -773,7 +773,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        NavBarPage(initialPage: 'Desposte'),
+                                        NavBarPage(initialPage: 'Despachos'),
                                   ),
                                 );
                               },
