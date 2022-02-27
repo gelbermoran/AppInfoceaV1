@@ -298,11 +298,9 @@ class _IngresoWidgetState extends State<IngresoWidget> {
                           ).toString());
                       await Navigator.pushAndRemoveUntil(
                         context,
-                        PageTransition(
-                          type: PageTransitionType.bottomToTop,
-                          duration: Duration(milliseconds: 1000),
-                          reverseDuration: Duration(milliseconds: 1000),
-                          child: NavBarPage(initialPage: 'Dashboard'),
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              NavBarPage(initialPage: 'Dashboard'),
                         ),
                         (r) => false,
                       );

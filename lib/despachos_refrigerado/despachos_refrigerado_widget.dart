@@ -135,14 +135,8 @@ class _DespachosRefrigeradoWidgetState
                                         onPressed: () async {
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 2000),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 2000),
-                                              child: NavBarPage(
+                                            MaterialPageRoute(
+                                              builder: (context) => NavBarPage(
                                                   initialPage: 'Despachos'),
                                             ),
                                           );
@@ -163,14 +157,9 @@ class _DespachosRefrigeradoWidgetState
                                         onPressed: () async {
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 2000),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 2000),
-                                              child: DespachosRevisionWidget(),
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  DespachosRevisionWidget(),
                                             ),
                                           );
                                         },

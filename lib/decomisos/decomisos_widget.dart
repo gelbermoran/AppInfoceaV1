@@ -119,14 +119,8 @@ class _DecomisosWidgetState extends State<DecomisosWidget> {
                                         onPressed: () async {
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 300),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 300),
-                                              child: NavBarPage(
+                                            MaterialPageRoute(
+                                              builder: (context) => NavBarPage(
                                                   initialPage: 'Dashboard'),
                                             ),
                                           );
@@ -147,14 +141,9 @@ class _DecomisosWidgetState extends State<DecomisosWidget> {
                                         onPressed: () async {
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 2000),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 2000),
-                                              child: DecomisosDesposteWidget(),
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  DecomisosDesposteWidget(),
                                             ),
                                           );
                                         },
@@ -858,14 +847,8 @@ class _DecomisosWidgetState extends State<DecomisosWidget> {
                                                 onPressed: () async {
                                                   await Navigator.push(
                                                     context,
-                                                    PageTransition(
-                                                      type: PageTransitionType
-                                                          .bottomToTop,
-                                                      duration: Duration(
-                                                          milliseconds: 1000),
-                                                      reverseDuration: Duration(
-                                                          milliseconds: 1000),
-                                                      child:
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
                                                           DetallesDecomisoWidget(
                                                         decomiso: getJsonField(
                                                           decomisosSacrificiosItem,
@@ -940,14 +923,8 @@ class _DecomisosWidgetState extends State<DecomisosWidget> {
                                                 onPressed: () async {
                                                   await Navigator.push(
                                                     context,
-                                                    PageTransition(
-                                                      type: PageTransitionType
-                                                          .bottomToTop,
-                                                      duration: Duration(
-                                                          milliseconds: 1000),
-                                                      reverseDuration: Duration(
-                                                          milliseconds: 1000),
-                                                      child:
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
                                                           EvidenciaDecomisoWidget(
                                                         decomiso: getJsonField(
                                                           decomisosSacrificiosItem,

@@ -48,11 +48,8 @@ class _BienvenidaWidgetState extends State<BienvenidaWidget> {
                   onPressed: () async {
                     await Navigator.pushAndRemoveUntil(
                       context,
-                      PageTransition(
-                        type: PageTransitionType.bottomToTop,
-                        duration: Duration(milliseconds: 1000),
-                        reverseDuration: Duration(milliseconds: 1000),
-                        child: IngresoWidget(),
+                      MaterialPageRoute(
+                        builder: (context) => IngresoWidget(),
                       ),
                       (r) => false,
                     );

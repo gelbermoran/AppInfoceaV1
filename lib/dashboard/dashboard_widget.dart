@@ -29,11 +29,8 @@ class _DashboardWidgetState extends State<DashboardWidget> {
       if ((FFAppState().token) == '') {
         await Navigator.pushAndRemoveUntil(
           context,
-          PageTransition(
-            type: PageTransitionType.bottomToTop,
-            duration: Duration(milliseconds: 300),
-            reverseDuration: Duration(milliseconds: 300),
-            child: BienvenidaWidget(),
+          MaterialPageRoute(
+            builder: (context) => BienvenidaWidget(),
           ),
           (r) => false,
         );
@@ -142,14 +139,9 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                       onTap: () async {
                                         await Navigator.push(
                                           context,
-                                          PageTransition(
-                                            type:
-                                                PageTransitionType.bottomToTop,
-                                            duration:
-                                                Duration(milliseconds: 1000),
-                                            reverseDuration:
-                                                Duration(milliseconds: 1000),
-                                            child: PerfilWidget(),
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                PerfilWidget(),
                                           ),
                                         );
                                       },
@@ -196,12 +188,8 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                               onTap: () async {
                                 await Navigator.push(
                                   context,
-                                  PageTransition(
-                                    type: PageTransitionType.bottomToTop,
-                                    duration: Duration(milliseconds: 1000),
-                                    reverseDuration:
-                                        Duration(milliseconds: 1000),
-                                    child: NavBarPage(
+                                  MaterialPageRoute(
+                                    builder: (context) => NavBarPage(
                                         initialPage: 'IngresoAnimales'),
                                   ),
                                 );
@@ -251,12 +239,9 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                               onTap: () async {
                                 await Navigator.push(
                                   context,
-                                  PageTransition(
-                                    type: PageTransitionType.bottomToTop,
-                                    duration: Duration(milliseconds: 2000),
-                                    reverseDuration:
-                                        Duration(milliseconds: 2000),
-                                    child: NavBarPage(initialPage: 'Decomisos'),
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        NavBarPage(initialPage: 'Decomisos'),
                                   ),
                                 );
                               },
@@ -304,12 +289,9 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                               onTap: () async {
                                 await Navigator.push(
                                   context,
-                                  PageTransition(
-                                    type: PageTransitionType.bottomToTop,
-                                    duration: Duration(milliseconds: 2000),
-                                    reverseDuration:
-                                        Duration(milliseconds: 2000),
-                                    child: NavBarPage(initialPage: 'Desposte'),
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        NavBarPage(initialPage: 'Desposte'),
                                   ),
                                 );
                               },
@@ -368,12 +350,8 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                               onTap: () async {
                                 await Navigator.push(
                                   context,
-                                  PageTransition(
-                                    type: PageTransitionType.bottomToTop,
-                                    duration: Duration(milliseconds: 2000),
-                                    reverseDuration:
-                                        Duration(milliseconds: 2000),
-                                    child: NavBarPage(
+                                  MaterialPageRoute(
+                                    builder: (context) => NavBarPage(
                                         initialPage: 'RendimientoCanal'),
                                   ),
                                 );
@@ -423,12 +401,9 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                               onTap: () async {
                                 await Navigator.push(
                                   context,
-                                  PageTransition(
-                                    type: PageTransitionType.bottomToTop,
-                                    duration: Duration(milliseconds: 2000),
-                                    reverseDuration:
-                                        Duration(milliseconds: 2000),
-                                    child: NavBarPage(initialPage: 'Despachos'),
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        NavBarPage(initialPage: 'Despachos'),
                                   ),
                                 );
                               },

@@ -118,14 +118,8 @@ class _DespachosWidgetState extends State<DespachosWidget> {
                                         onPressed: () async {
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 300),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 300),
-                                              child: NavBarPage(
+                                            MaterialPageRoute(
+                                              builder: (context) => NavBarPage(
                                                   initialPage: 'Dashboard'),
                                             ),
                                           );
@@ -146,14 +140,8 @@ class _DespachosWidgetState extends State<DespachosWidget> {
                                         onPressed: () async {
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 2000),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 2000),
-                                              child:
+                                            MaterialPageRoute(
+                                              builder: (context) =>
                                                   DespachosRefrigeradoWidget(),
                                             ),
                                           );
@@ -174,14 +162,9 @@ class _DespachosWidgetState extends State<DespachosWidget> {
                                         onPressed: () async {
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 2000),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 2000),
-                                              child: DespachosRevisionWidget(),
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  DespachosRevisionWidget(),
                                             ),
                                           );
                                         },

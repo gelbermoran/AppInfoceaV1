@@ -109,14 +109,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         onPressed: () async {
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 2000),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 2000),
-                                              child: NavBarPage(
+                                            MaterialPageRoute(
+                                              builder: (context) => NavBarPage(
                                                   initialPage: 'Dashboard'),
                                             ),
                                           );
@@ -137,14 +131,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         onPressed: () async {
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 2000),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 2000),
-                                              child: ConfiguracionWidget(),
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ConfiguracionWidget(),
                                             ),
                                           );
                                         },
@@ -192,14 +181,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           }
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 1000),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 1000),
-                                              child: BienvenidaWidget(),
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  BienvenidaWidget(),
                                             ),
                                           );
                                           setState(
@@ -321,14 +305,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           onLongPress: () async {
                                             await Navigator.pushAndRemoveUntil(
                                               context,
-                                              PageTransition(
-                                                type: PageTransitionType
-                                                    .bottomToTop,
-                                                duration: Duration(
-                                                    milliseconds: 1000),
-                                                reverseDuration: Duration(
-                                                    milliseconds: 1000),
-                                                child: BienvenidaWidget(),
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    BienvenidaWidget(),
                                               ),
                                               (r) => false,
                                             );
@@ -341,14 +320,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                               onLongPress: () async {
                                                 await Navigator.push(
                                                   context,
-                                                  PageTransition(
-                                                    type: PageTransitionType
-                                                        .bottomToTop,
-                                                    duration: Duration(
-                                                        milliseconds: 1000),
-                                                    reverseDuration: Duration(
-                                                        milliseconds: 1000),
-                                                    child: BienvenidaWidget(),
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        BienvenidaWidget(),
                                                   ),
                                                 );
                                               },
@@ -448,12 +422,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                               onTap: () async {
                                 await Navigator.push(
                                   context,
-                                  PageTransition(
-                                    type: PageTransitionType.bottomToTop,
-                                    duration: Duration(milliseconds: 1000),
-                                    reverseDuration:
-                                        Duration(milliseconds: 1000),
-                                    child: NavBarPage(
+                                  MaterialPageRoute(
+                                    builder: (context) => NavBarPage(
                                         initialPage: 'IngresoAnimales'),
                                   ),
                                 );
@@ -544,12 +514,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                               onTap: () async {
                                 await Navigator.push(
                                   context,
-                                  PageTransition(
-                                    type: PageTransitionType.bottomToTop,
-                                    duration: Duration(milliseconds: 1000),
-                                    reverseDuration:
-                                        Duration(milliseconds: 1000),
-                                    child: NavBarPage(
+                                  MaterialPageRoute(
+                                    builder: (context) => NavBarPage(
                                         initialPage: 'RendimientoCanal'),
                                   ),
                                 );
@@ -637,12 +603,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                               onTap: () async {
                                 await Navigator.push(
                                   context,
-                                  PageTransition(
-                                    type: PageTransitionType.bottomToTop,
-                                    duration: Duration(milliseconds: 1000),
-                                    reverseDuration:
-                                        Duration(milliseconds: 1000),
-                                    child: NavBarPage(initialPage: 'Decomisos'),
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        NavBarPage(initialPage: 'Decomisos'),
                                   ),
                                 );
                               },
@@ -724,12 +687,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                               onTap: () async {
                                 await Navigator.push(
                                   context,
-                                  PageTransition(
-                                    type: PageTransitionType.bottomToTop,
-                                    duration: Duration(milliseconds: 1000),
-                                    reverseDuration:
-                                        Duration(milliseconds: 1000),
-                                    child: NavBarPage(initialPage: 'Despachos'),
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        NavBarPage(initialPage: 'Despachos'),
                                   ),
                                 );
                               },
@@ -811,12 +771,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                               onTap: () async {
                                 await Navigator.push(
                                   context,
-                                  PageTransition(
-                                    type: PageTransitionType.bottomToTop,
-                                    duration: Duration(milliseconds: 1000),
-                                    reverseDuration:
-                                        Duration(milliseconds: 1000),
-                                    child: NavBarPage(initialPage: 'Desposte'),
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        NavBarPage(initialPage: 'Desposte'),
                                   ),
                                 );
                               },
@@ -878,11 +835,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           onTap: () async {
                             await Navigator.push(
                               context,
-                              PageTransition(
-                                type: PageTransitionType.bottomToTop,
-                                duration: Duration(milliseconds: 1000),
-                                reverseDuration: Duration(milliseconds: 1000),
-                                child: EstadisticasWidget(),
+                              MaterialPageRoute(
+                                builder: (context) => EstadisticasWidget(),
                               ),
                             );
                           },

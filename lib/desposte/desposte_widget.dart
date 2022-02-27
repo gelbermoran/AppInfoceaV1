@@ -114,14 +114,8 @@ class _DesposteWidgetState extends State<DesposteWidget> {
                                         onPressed: () async {
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 300),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 300),
-                                              child: NavBarPage(
+                                            MaterialPageRoute(
+                                              builder: (context) => NavBarPage(
                                                   initialPage: 'Dashboard'),
                                             ),
                                           );

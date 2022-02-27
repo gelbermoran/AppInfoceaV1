@@ -134,14 +134,8 @@ class _DespachosRevisionWidgetState extends State<DespachosRevisionWidget> {
                                         onPressed: () async {
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 2000),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 2000),
-                                              child:
+                                            MaterialPageRoute(
+                                              builder: (context) =>
                                                   DespachosRefrigeradoWidget(),
                                             ),
                                           );
@@ -162,14 +156,8 @@ class _DespachosRevisionWidgetState extends State<DespachosRevisionWidget> {
                                         onPressed: () async {
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 2000),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 2000),
-                                              child: NavBarPage(
+                                            MaterialPageRoute(
+                                              builder: (context) => NavBarPage(
                                                   initialPage: 'Despachos'),
                                             ),
                                           );

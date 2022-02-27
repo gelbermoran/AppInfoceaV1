@@ -55,11 +55,9 @@ class _NotificacionesWidgetState extends State<NotificacionesWidget> {
                       onPressed: () async {
                         await Navigator.push(
                           context,
-                          PageTransition(
-                            type: PageTransitionType.bottomToTop,
-                            duration: Duration(milliseconds: 1000),
-                            reverseDuration: Duration(milliseconds: 1000),
-                            child: NavBarPage(initialPage: 'Dashboard'),
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                NavBarPage(initialPage: 'Dashboard'),
                           ),
                         );
                       },

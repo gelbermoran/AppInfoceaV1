@@ -116,14 +116,8 @@ class _RendimientoCanalWidgetState extends State<RendimientoCanalWidget> {
                                         onPressed: () async {
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 300),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 300),
-                                              child: NavBarPage(
+                                            MaterialPageRoute(
+                                              builder: (context) => NavBarPage(
                                                   initialPage: 'Dashboard'),
                                             ),
                                           );
@@ -886,14 +880,8 @@ class _RendimientoCanalWidgetState extends State<RendimientoCanalWidget> {
                                                 onPressed: () async {
                                                   await Navigator.push(
                                                     context,
-                                                    PageTransition(
-                                                      type: PageTransitionType
-                                                          .bottomToTop,
-                                                      duration: Duration(
-                                                          milliseconds: 1000),
-                                                      reverseDuration: Duration(
-                                                          milliseconds: 1000),
-                                                      child:
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
                                                           RendimientoCanalxCanalWidget(
                                                         orden: getJsonField(
                                                           ordenesItem,
@@ -921,14 +909,8 @@ class _RendimientoCanalWidgetState extends State<RendimientoCanalWidget> {
                                                 onPressed: () async {
                                                   await Navigator.push(
                                                     context,
-                                                    PageTransition(
-                                                      type: PageTransitionType
-                                                          .bottomToTop,
-                                                      duration: Duration(
-                                                          milliseconds: 1000),
-                                                      reverseDuration: Duration(
-                                                          milliseconds: 1000),
-                                                      child:
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
                                                           RendimientoRetomeWidget(
                                                         orden: getJsonField(
                                                           ordenesItem,

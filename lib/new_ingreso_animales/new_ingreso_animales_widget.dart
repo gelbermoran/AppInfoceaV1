@@ -1,16 +1,14 @@
 import '../backend/api_requests/api_calls.dart';
-import '../bienvenida/bienvenida_widget.dart';
 import '../components/vacios_fechas_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_rive_controller.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
 import '../pesaje_pie_animales/pesaje_pie_animales_widget.dart';
 import '../pesaje_total_lote/pesaje_total_lote_widget.dart';
 import 'dart:ui';
 import '../flutter_flow/custom_functions.dart' as functions;
-import 'package:rive/rive.dart' hide LinearGradient;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -28,13 +26,6 @@ class _NewIngresoAnimalesWidgetState extends State<NewIngresoAnimalesWidget> {
   ApiCallResponse ingresoVehiculos;
   TextEditingController fecFinController;
   TextEditingController fecIniController;
-  final riveAnimationAnimationsList = [
-    'Main Loop',
-    'Lightning 0',
-    'Intro',
-    'Lightning 2',
-  ];
-  List<FlutterFlowRiveController> riveAnimationControllers = [];
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -42,24 +33,7 @@ class _NewIngresoAnimalesWidgetState extends State<NewIngresoAnimalesWidget> {
     super.initState();
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if ((FFAppState().token) == '') {
-        await Navigator.push(
-          context,
-          PageTransition(
-            type: PageTransitionType.bottomToTop,
-            duration: Duration(milliseconds: 300),
-            reverseDuration: Duration(milliseconds: 300),
-            child: BienvenidaWidget(),
-          ),
-        );
-      }
-    });
-
-    riveAnimationAnimationsList.forEach((name) {
-      riveAnimationControllers.add(FlutterFlowRiveController(
-        name,
-        shouldLoop: true,
-      ));
+      await Future.delayed(const Duration(milliseconds: 1000));
     });
 
     fecFinController =
@@ -72,40 +46,6 @@ class _NewIngresoAnimalesWidgetState extends State<NewIngresoAnimalesWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(1),
-        child: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryColor,
-          automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30,
-            borderWidth: 1,
-            buttonSize: 60,
-            icon: Icon(
-              Icons.arrow_back_rounded,
-              color: Colors.white,
-              size: 30,
-            ),
-            onPressed: () {
-              print('IconButton pressed ...');
-            },
-          ),
-          flexibleSpace: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(10, 5, 0, 0),
-            child: Text(
-              'Ingreso de Animales',
-              style: FlutterFlowTheme.of(context).title2.override(
-                    fontFamily: 'Hind Siliguri',
-                    color: Colors.white,
-                    fontSize: 22,
-                  ),
-            ),
-          ),
-          actions: [],
-          elevation: 2,
-        ),
-      ),
       backgroundColor: Color(0xFFF5F5F5),
       body: SafeArea(
         child: GestureDetector(
@@ -184,14 +124,8 @@ class _NewIngresoAnimalesWidgetState extends State<NewIngresoAnimalesWidget> {
                                         onPressed: () async {
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 300),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 300),
-                                              child: NavBarPage(
+                                            MaterialPageRoute(
+                                              builder: (context) => NavBarPage(
                                                   initialPage: 'Dashboard'),
                                             ),
                                           );
@@ -566,167 +500,121 @@ class _NewIngresoAnimalesWidgetState extends State<NewIngresoAnimalesWidget> {
                             itemCount: ingresos.length,
                             itemBuilder: (context, ingresosIndex) {
                               final ingresosItem = ingresos[ingresosIndex];
-                              return Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                                child: Material(
-                                  color: Colors.transparent,
-                                  elevation: 1,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: Container(
-                                    width: 100,
-                                    height: 120,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .tertiaryColor,
-                                      borderRadius: BorderRadius.circular(15),
-                                    ),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Container(
-                                              width: 10,
-                                              height: 120,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryColor,
-                                                borderRadius: BorderRadius.only(
-                                                  bottomLeft:
-                                                      Radius.circular(15),
-                                                  bottomRight:
-                                                      Radius.circular(0),
-                                                  topLeft: Radius.circular(15),
-                                                  topRight: Radius.circular(0),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
+                              return Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Card(
+                                        clipBehavior:
+                                            Clip.antiAliasWithSaveLayer,
+                                        color: Color(0xFFF5F5F5),
+                                        child: Text(
+                                          getJsonField(
+                                            ingresosItem,
+                                            r'''$.lote_ingreso''',
+                                          ).toString(),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1,
                                         ),
-                                        Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Text(
-                                                  getJsonField(
+                                      ),
+                                    ],
+                                  ),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 0, 0, 5),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            await Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    PesajeTotalLoteWidget(
+                                                  lote: getJsonField(
                                                     ingresosItem,
                                                     r'''$.lote_ingreso''',
-                                                  ).toString(),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText1,
-                                                ),
-                                                Container(
-                                                  width: 150,
-                                                  height: 130,
-                                                  child: RiveAnimation.network(
-                                                    'https://public.rive.app/community/runtime-files/1199-2317-jack-olantern.riv',
-                                                    artboard: 'New Artboard',
-                                                    fit: BoxFit.cover,
-                                                    controllers:
-                                                        riveAnimationControllers,
                                                   ),
                                                 ),
-                                              ],
+                                              ),
+                                            );
+                                          },
+                                          text: '',
+                                          icon: Icon(
+                                            Icons.threesixty,
+                                            size: 15,
+                                          ),
+                                          options: FFButtonOptions(
+                                            width: 130,
+                                            height: 40,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryColor,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily:
+                                                          'Hind Siliguri',
+                                                      color: Colors.white,
+                                                    ),
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1,
                                             ),
-                                          ],
+                                            borderRadius: 12,
+                                          ),
                                         ),
-                                        Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Row(
-                                              mainAxisSize: MainAxisSize.min,
-                                              children: [
-                                                FlutterFlowIconButton(
-                                                  borderColor:
-                                                      Colors.transparent,
-                                                  borderRadius: 30,
-                                                  borderWidth: 1,
-                                                  buttonSize: 60,
-                                                  icon: Icon(
-                                                    Icons.add_box_outlined,
-                                                    color: Colors.black,
-                                                    size: 30,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 0, 0, 5),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            await Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    PesajePieAnimalesWidget(
+                                                  lote: getJsonField(
+                                                    ingresosItem,
+                                                    r'''$.lote_ingreso''',
                                                   ),
-                                                  onPressed: () async {
-                                                    await Navigator.push(
-                                                      context,
-                                                      PageTransition(
-                                                        type: PageTransitionType
-                                                            .bottomToTop,
-                                                        duration: Duration(
-                                                            milliseconds: 1000),
-                                                        reverseDuration:
-                                                            Duration(
-                                                                milliseconds:
-                                                                    1000),
-                                                        child:
-                                                            PesajeTotalLoteWidget(
-                                                          lote: getJsonField(
-                                                            ingresosItem,
-                                                            r'''$.lote_ingreso''',
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    );
-                                                  },
                                                 ),
-                                              ],
+                                              ),
+                                            );
+                                          },
+                                          text: '',
+                                          icon: Icon(
+                                            Icons.four_k_plus,
+                                            size: 15,
+                                          ),
+                                          options: FFButtonOptions(
+                                            width: 130,
+                                            height: 40,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryColor,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily:
+                                                          'Hind Siliguri',
+                                                      color: Colors.white,
+                                                    ),
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1,
                                             ),
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                FlutterFlowIconButton(
-                                                  borderColor:
-                                                      Colors.transparent,
-                                                  borderRadius: 30,
-                                                  borderWidth: 1,
-                                                  buttonSize: 60,
-                                                  icon: Icon(
-                                                    Icons.six__ft_apart,
-                                                    color: Colors.black,
-                                                    size: 30,
-                                                  ),
-                                                  onPressed: () async {
-                                                    await Navigator.push(
-                                                      context,
-                                                      PageTransition(
-                                                        type: PageTransitionType
-                                                            .bottomToTop,
-                                                        duration: Duration(
-                                                            milliseconds: 1000),
-                                                        reverseDuration:
-                                                            Duration(
-                                                                milliseconds:
-                                                                    1000),
-                                                        child:
-                                                            PesajePieAnimalesWidget(
-                                                          lote: getJsonField(
-                                                            ingresosItem,
-                                                            r'''$.lote_ingreso''',
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    );
-                                                  },
-                                                ),
-                                              ],
-                                            ),
-                                          ],
+                                            borderRadius: 12,
+                                          ),
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
-                                ),
+                                ],
                               );
                             },
                           );

@@ -105,14 +105,9 @@ class _ConfiguracionWidgetState extends State<ConfiguracionWidget> {
                                         onPressed: () async {
                                           await Navigator.pushAndRemoveUntil(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 2000),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 2000),
-                                              child: PerfilWidget(),
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  PerfilWidget(),
                                             ),
                                             (r) => false,
                                           );
@@ -348,12 +343,8 @@ class _ConfiguracionWidgetState extends State<ConfiguracionWidget> {
                                         ));
                                     await Navigator.pushAndRemoveUntil(
                                       context,
-                                      PageTransition(
-                                        type: PageTransitionType.bottomToTop,
-                                        duration: Duration(milliseconds: 300),
-                                        reverseDuration:
-                                            Duration(milliseconds: 300),
-                                        child: PerfilWidget(),
+                                      MaterialPageRoute(
+                                        builder: (context) => PerfilWidget(),
                                       ),
                                       (r) => false,
                                     );

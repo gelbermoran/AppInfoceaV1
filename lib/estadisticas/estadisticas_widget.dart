@@ -100,14 +100,9 @@ class _EstadisticasWidgetState extends State<EstadisticasWidget> {
                                         onPressed: () async {
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 2000),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 2000),
-                                              child: PerfilWidget(),
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  PerfilWidget(),
                                             ),
                                           );
                                         },

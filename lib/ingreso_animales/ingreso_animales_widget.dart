@@ -36,11 +36,8 @@ class _IngresoAnimalesWidgetState extends State<IngresoAnimalesWidget> {
       if ((FFAppState().token) == '') {
         await Navigator.push(
           context,
-          PageTransition(
-            type: PageTransitionType.bottomToTop,
-            duration: Duration(milliseconds: 300),
-            reverseDuration: Duration(milliseconds: 300),
-            child: BienvenidaWidget(),
+          MaterialPageRoute(
+            builder: (context) => BienvenidaWidget(),
           ),
         );
       }
@@ -134,14 +131,8 @@ class _IngresoAnimalesWidgetState extends State<IngresoAnimalesWidget> {
                                         onPressed: () async {
                                           await Navigator.push(
                                             context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 300),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 300),
-                                              child: NavBarPage(
+                                            MaterialPageRoute(
+                                              builder: (context) => NavBarPage(
                                                   initialPage: 'Dashboard'),
                                             ),
                                           );
@@ -1039,14 +1030,8 @@ class _IngresoAnimalesWidgetState extends State<IngresoAnimalesWidget> {
                                                 onPressed: () async {
                                                   await Navigator.push(
                                                     context,
-                                                    PageTransition(
-                                                      type: PageTransitionType
-                                                          .bottomToTop,
-                                                      duration: Duration(
-                                                          milliseconds: 1000),
-                                                      reverseDuration: Duration(
-                                                          milliseconds: 1000),
-                                                      child:
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
                                                           PesajeTotalLoteWidget(
                                                         lote: getJsonField(
                                                           ingresosItem,
@@ -1074,14 +1059,8 @@ class _IngresoAnimalesWidgetState extends State<IngresoAnimalesWidget> {
                                                 onPressed: () async {
                                                   await Navigator.push(
                                                     context,
-                                                    PageTransition(
-                                                      type: PageTransitionType
-                                                          .bottomToTop,
-                                                      duration: Duration(
-                                                          milliseconds: 1000),
-                                                      reverseDuration: Duration(
-                                                          milliseconds: 1000),
-                                                      child:
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
                                                           PesajePieAnimalesWidget(
                                                         lote: getJsonField(
                                                           ingresosItem,
