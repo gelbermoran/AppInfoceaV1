@@ -1,5 +1,6 @@
 import '../backend/api_requests/api_calls.dart';
 import '../components/vacios_fechas_widget.dart';
+import '../flutter_flow/flutter_flow_calendar.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -26,7 +27,17 @@ class _IngresoAnimalesCopyWidgetState extends State<IngresoAnimalesCopyWidget> {
   ApiCallResponse resultIngresos;
   DateTime datePicked1;
   DateTime datePicked2;
+  DateTimeRange calendarSelectedDay;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    calendarSelectedDay = DateTimeRange(
+      start: DateTime.now().startOfDay,
+      end: DateTime.now().endOfDay,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -1021,6 +1032,32 @@ class _IngresoAnimalesCopyWidgetState extends State<IngresoAnimalesCopyWidget> {
                       ),
                     ],
                   ),
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 150,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFEEEEEE),
+                      ),
+                      child: FlutterFlowCalendar(
+                        color: FlutterFlowTheme.of(context).primaryColor,
+                        weekFormat: true,
+                        weekStartsMonday: false,
+                        initialDate: getCurrentTimestamp,
+                        onChange: (DateTimeRange newSelectedDate) {
+                          setState(() => calendarSelectedDay = newSelectedDate);
+                        },
+                        titleStyle: TextStyle(),
+                        dayOfWeekStyle: TextStyle(),
+                        dateStyle: TextStyle(),
+                        selectedDateStyle: TextStyle(),
+                        inactiveDateStyle: TextStyle(),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
