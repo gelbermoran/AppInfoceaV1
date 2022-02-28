@@ -266,9 +266,11 @@ class _RendimientoCanalxCanalWidgetState
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Row(
-                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceAround,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -282,7 +284,7 @@ class _RendimientoCanalxCanalWidgetState
                                           children: [
                                             Container(
                                               width: 10,
-                                              height: 150,
+                                              height: 200,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFF8C0E03),
                                               ),

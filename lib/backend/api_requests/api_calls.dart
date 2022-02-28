@@ -463,3 +463,24 @@ class NotificacionesXFechasCall {
     );
   }
 }
+
+class APITestCall {
+  static Future<ApiCallResponse> call({
+    String cliente = '1',
+    String inicio = '',
+    String fin = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'API Test',
+      apiUrl: 'https://webhook.site/25af2938-8e64-4b29-8da0-88c303a1fba9',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'cliente': cliente,
+        'inicio': inicio,
+        'fin': fin,
+      },
+      returnBody: true,
+    );
+  }
+}

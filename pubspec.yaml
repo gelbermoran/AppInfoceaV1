@@ -30,7 +30,6 @@ dependencies:
   calendar_view:
   easy_debounce: 2.0.1
   equatable: 2.0.3
-  floating_bottom_navigation_bar: 1.5.2
   flutter_datetime_picker: 1.5.0
   flutter_spinkit: 4.1.2+1
   font_awesome_flutter: 8.11.0

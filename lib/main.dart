@@ -2,7 +2,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:infocea/bienvenida/bienvenida_widget.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/internationalization.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,7 +11,6 @@ import 'rendimiento_canal/rendimiento_canal_widget.dart';
 import 'decomisos/decomisos_widget.dart';
 import 'despachos/despachos_widget.dart';
 import 'desposte/desposte_widget.dart';
-import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -100,104 +98,63 @@ class _NavBarPageState extends State<NavBarPage> {
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
       body: tabs[_currentPage],
-      extendBody: true,
-      bottomNavigationBar: FloatingNavbar(
+      bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
         backgroundColor: Colors.white,
         selectedItemColor: FlutterFlowTheme.of(context).primaryColor,
         unselectedItemColor: Color(0xFFC2CAD9),
-        selectedBackgroundColor: Color(0x002A2A2A),
-        borderRadius: 5,
-        itemBorderRadius: 1,
-        margin: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
-        padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
-        width: MediaQuery.of(context).size.width * 0.9,
-        elevation: 5,
-        items: [
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.dashboard,
-                  color: currentIndex == 0
-                      ? FlutterFlowTheme.of(context).primaryColor
-                      : Color(0xFFC2CAD9),
-                  size: 24,
-                ),
-              ],
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.dashboard,
+              size: 24,
             ),
+            label: 'Inicio',
+            tooltip: '',
           ),
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  FontAwesomeIcons.angleDoubleDown,
-                  color: currentIndex == 1
-                      ? FlutterFlowTheme.of(context).primaryColor
-                      : Color(0xFFC2CAD9),
-                  size: 24,
-                ),
-              ],
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.mediation_outlined,
+              size: 24,
             ),
+            label: 'Ingreso',
+            tooltip: '',
           ),
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.account_balance_wallet_rounded,
-                  color: currentIndex == 2
-                      ? FlutterFlowTheme.of(context).primaryColor
-                      : Color(0xFFC2CAD9),
-                  size: 24,
-                ),
-              ],
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.monetization_on_sharp,
+              size: 24,
             ),
+            label: 'Canal',
+            tooltip: '',
           ),
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.cancel_outlined,
-                  color: currentIndex == 3
-                      ? FlutterFlowTheme.of(context).primaryColor
-                      : Color(0xFFC2CAD9),
-                  size: 24,
-                ),
-              ],
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.policy_sharp,
+              size: 24,
             ),
+            label: 'Decomisos',
+            tooltip: '',
           ),
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.airport_shuttle_rounded,
-                  color: currentIndex == 4
-                      ? FlutterFlowTheme.of(context).primaryColor
-                      : Color(0xFFC2CAD9),
-                  size: 24,
-                ),
-              ],
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.local_shipping,
+              size: 24,
             ),
+            label: 'Despacho',
+            tooltip: '',
           ),
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.content_cut_rounded,
-                  color: currentIndex == 5
-                      ? FlutterFlowTheme.of(context).primaryColor
-                      : Color(0xFFC2CAD9),
-                  size: 24,
-                ),
-              ],
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.grain_rounded,
+              size: 24,
             ),
+            label: 'Desposte',
+            tooltip: '',
           )
         ],
       ),

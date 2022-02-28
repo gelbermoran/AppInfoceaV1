@@ -1,8 +1,8 @@
 import '../backend/api_requests/api_calls.dart';
+import '../dashboard/dashboard_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../main.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -213,7 +213,8 @@ class _IngresoWidgetState extends State<IngresoWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
                   child: InkWell(
                     onTap: () async {
-                      await launchURL('mailto:ceagrodex@psnar.com');
+                      await launchURL(
+                          'mailto:ceagrodex@parquecrea.com?subject=Recuperar%20Contraseña%20Ceagrodex%20Infocea1.0&body=Por%20favor%20ayudarme%20con%20la%20recuperación%20de%20la%20contraseña%20del%20usuario%20con%20el%20correo:%0A%0D%0AMuchas%20gracias');
                     },
                     child: Text(
                       '¿Olvido su contraseña?',
@@ -299,8 +300,12 @@ class _IngresoWidgetState extends State<IngresoWidget> {
                       await Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              NavBarPage(initialPage: 'Dashboard'),
+                          builder: (context) => DashboardWidget(
+                            token: getJsonField(
+                              (buttonLoginAPICeagrodexResponse?.jsonBody ?? ''),
+                              r'''$.access_token''',
+                            ).toString(),
+                          ),
                         ),
                         (r) => false,
                       );
@@ -337,7 +342,8 @@ class _IngresoWidgetState extends State<IngresoWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                 child: InkWell(
                   onTap: () async {
-                    await launchURL('mailto:ceagrodex@psnar.com');
+                    await launchURL(
+                        'mailto:ceagrodex@parquecrea.com?subject=Crear%Cuenta%20de%20Usuario%20Ceagrodex%20Infocea1.0&body=Por%20favor%20ayudarme%20con%20la%20creación%20de%20una%20cuenta%20de%20usuario%20con%20el%20correo:%0A%0D%0AMuchas%20gracias');
                   },
                   child: Text(
                     'Envíe un correo ',

@@ -26,9 +26,9 @@ class EvidenciaDecomisoWidget extends StatefulWidget {
     this.politica,
   }) : super(key: key);
 
-  final int decomiso;
+  final String decomiso;
   final String numeroanimal;
-  final int orden;
+  final String orden;
   final String procedencia;
   final String proveedor;
   final String tipoanimal;
@@ -211,10 +211,7 @@ class _EvidenciaDecomisoWidgetState extends State<EvidenciaDecomisoWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10, 0, 0, 0),
                                         child: Text(
-                                          valueOrDefault<String>(
-                                            widget.decomiso.toString(),
-                                            '0',
-                                          ),
+                                          widget.decomiso,
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .title1
@@ -361,10 +358,7 @@ class _EvidenciaDecomisoWidgetState extends State<EvidenciaDecomisoWidget> {
                                     ),
                                     Expanded(
                                       child: Text(
-                                        valueOrDefault<String>(
-                                          widget.orden.toString(),
-                                          '0',
-                                        ),
+                                        widget.orden,
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
                                             .subtitle2
@@ -1271,8 +1265,9 @@ class _EvidenciaDecomisoWidgetState extends State<EvidenciaDecomisoWidget> {
                                           color: Color(0xFF57636C),
                                           size: 20,
                                         ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
+                                        onPressed: () async {
+                                          await launchURL(
+                                              'https://wa.me/573178835447');
                                         },
                                       ),
                                     ),
@@ -1289,8 +1284,9 @@ class _EvidenciaDecomisoWidgetState extends State<EvidenciaDecomisoWidget> {
                                           color: Color(0xFF57636C),
                                           size: 20,
                                         ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
+                                        onPressed: () async {
+                                          await launchURL(
+                                              'mailto:ceagrodex@parquecrea.com?subject=Dudas%20Evidencia%20de%20Decomiso%20Ceagrodex%20Infocea1.0&body=Por%20favor%20ayudarme%20con%20la%20información%20sobre%20el%20decomiso%20que%20aparece%20en%20la%20Plataforma.%0A%0D%0AMuchas%20gracias');
                                         },
                                       ),
                                     ),
@@ -1308,7 +1304,8 @@ class _EvidenciaDecomisoWidgetState extends State<EvidenciaDecomisoWidget> {
                                           size: 20,
                                         ),
                                         onPressed: () async {
-                                          await launchURL(widget.url);
+                                          await launchURL(
+                                              'https://www.youtube.com/watch?v=t2WXimn3zSc');
                                         },
                                       ),
                                     ),

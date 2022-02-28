@@ -1,26 +1,27 @@
 import '../backend/api_requests/api_calls.dart';
 import '../components/vacios_fechas_widget.dart';
-import '../detalles_decomiso/detalles_decomiso_widget.dart';
-import '../evidencia_decomiso/evidencia_decomiso_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../main.dart';
+import '../pesaje_pie_animales/pesaje_pie_animales_widget.dart';
+import '../pesaje_total_lote/pesaje_total_lote_widget.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class DecomisosDesposteWidget extends StatefulWidget {
-  const DecomisosDesposteWidget({Key key}) : super(key: key);
+class IngresoAnimalesV2Widget extends StatefulWidget {
+  const IngresoAnimalesV2Widget({Key key}) : super(key: key);
 
   @override
-  _DecomisosDesposteWidgetState createState() =>
-      _DecomisosDesposteWidgetState();
+  _IngresoAnimalesV2WidgetState createState() =>
+      _IngresoAnimalesV2WidgetState();
 }
 
-class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
+class _IngresoAnimalesV2WidgetState extends State<IngresoAnimalesV2Widget> {
   DateTime datePicked1;
   DateTime datePicked2;
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -56,7 +57,7 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               image: Image.asset(
-                                'assets/images/decomisos.jpg',
+                                'assets/images/ingreso.jpeg',
                               ).image,
                             ),
                           ),
@@ -86,15 +87,13 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 10, 10, 10),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      FlutterFlowIconButton(
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10, 10, 0, 0),
+                                      child: FlutterFlowIconButton(
                                         borderColor: Color(0xFFDBE2E7),
                                         borderRadius: 8,
                                         borderWidth: 1,
@@ -107,33 +106,17 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                           size: 20,
                                         ),
                                         onPressed: () async {
-                                          Navigator.pop(context);
-                                        },
-                                      ),
-                                      FlutterFlowIconButton(
-                                        borderColor: Color(0xFFDBE2E7),
-                                        borderRadius: 8,
-                                        borderWidth: 1,
-                                        buttonSize: 40,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .tertiaryColor,
-                                        icon: Icon(
-                                          Icons.policy,
-                                          color: Color(0xFF57636C),
-                                          size: 20,
-                                        ),
-                                        onPressed: () async {
                                           await Navigator.push(
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) => NavBarPage(
-                                                  initialPage: 'Decomisos'),
+                                                  initialPage: 'Dashboard'),
                                             ),
                                           );
                                         },
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
@@ -143,7 +126,7 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        'Decomisos',
+                                        'Ingreso',
                                         style: FlutterFlowTheme.of(context)
                                             .title1
                                             .override(
@@ -164,7 +147,7 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        'de canales',
+                                        'de animales',
                                         style: FlutterFlowTheme.of(context)
                                             .title2
                                             .override(
@@ -187,7 +170,7 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -199,10 +182,11 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
                           child: Text(
-                            'En Desposte',
+                            'Ingreso de Vehículos',
                             style: FlutterFlowTheme.of(context).title2.override(
                                   fontFamily: 'Hind Siliguri',
-                                  color: Color(0xFFF8AB74),
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
                                 ),
                           ),
                         ),
@@ -217,7 +201,7 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 10),
+                padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 10),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -257,7 +241,7 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                 Text(
                                   valueOrDefault<String>(
                                     dateTimeFormat('d/M/y', datePicked1),
-                                    'Fecha inicio',
+                                    'Escoger...',
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .subtitle2
@@ -311,7 +295,7 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                               Text(
                                 valueOrDefault<String>(
                                   dateTimeFormat('d/M/y', datePicked2),
-                                  'Fecha fin',
+                                  'Escoger...',
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .subtitle2
@@ -339,7 +323,7 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 10),
                   child: FutureBuilder<ApiCallResponse>(
-                    future: DecomisosDesposteCall.call(
+                    future: IngresoVehiculosCall.call(
                       cliente: FFAppState().usuarioId.toString(),
                       inicio: dateTimeFormat('d/M/y', datePicked1),
                       fin: dateTimeFormat('d/M/y', datePicked2),
@@ -358,18 +342,16 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                           ),
                         );
                       }
-                      final listViewDesposteDecomisosDesposteResponse =
-                          snapshot.data;
+                      final listViewIngresoVehiculosResponse = snapshot.data;
                       return Builder(
                         builder: (context) {
-                          final decomisosDesposte = getJsonField(
-                                (listViewDesposteDecomisosDesposteResponse
-                                        ?.jsonBody ??
+                          final ingresos = getJsonField(
+                                (listViewIngresoVehiculosResponse?.jsonBody ??
                                     ''),
                                 r'''$''',
                               )?.toList() ??
                               [];
-                          if (decomisosDesposte.isEmpty) {
+                          if (ingresos.isEmpty) {
                             return Center(
                               child: Container(
                                 width: MediaQuery.of(context).size.width,
@@ -381,12 +363,10 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                           return ListView.builder(
                             padding: EdgeInsets.zero,
                             primary: false,
-                            shrinkWrap: true,
                             scrollDirection: Axis.vertical,
-                            itemCount: decomisosDesposte.length,
-                            itemBuilder: (context, decomisosDesposteIndex) {
-                              final decomisosDesposteItem =
-                                  decomisosDesposte[decomisosDesposteIndex];
+                            itemCount: ingresos.length,
+                            itemBuilder: (context, ingresosIndex) {
+                              final ingresosItem = ingresos[ingresosIndex];
                               return Padding(
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
@@ -401,6 +381,8 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                     mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -416,7 +398,9 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                               width: 10,
                                               height: 150,
                                               decoration: BoxDecoration(
-                                                color: Color(0xFFF8AB74),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryColor,
                                               ),
                                             ),
                                           ],
@@ -444,12 +428,15 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                                   Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
                                                             .start,
                                                     children: [
                                                       Text(
-                                                        'Orden de Producción',
+                                                        'Lote de Ingreso',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -467,13 +454,6 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Icon(
-                                                            Icons
-                                                                .format_list_numbered,
-                                                            color: Color(
-                                                                0xFF9E9E9E),
-                                                            size: 24,
-                                                          ),
                                                           Padding(
                                                             padding:
                                                                 EdgeInsetsDirectional
@@ -484,8 +464,8 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                                                         0),
                                                             child: Text(
                                                               getJsonField(
-                                                                decomisosDesposteItem,
-                                                                r'''$.orden_produccion''',
+                                                                ingresosItem,
+                                                                r'''$.lote_ingreso''',
                                                               )
                                                                   .toString()
                                                                   .maybeHandleOverflow(
@@ -506,13 +486,15 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                                   Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
                                                     crossAxisAlignment:
-                                                        CrossAxisAlignment.end,
+                                                        CrossAxisAlignment
+                                                            .center,
                                                     children: [
                                                       Text(
-                                                        '# Animal',
-                                                        textAlign:
-                                                            TextAlign.end,
+                                                        '# Animales',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -530,13 +512,6 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Icon(
-                                                            Icons
-                                                                .addchart_rounded,
-                                                            color: Color(
-                                                                0xFF9E9E9E),
-                                                            size: 24,
-                                                          ),
                                                           Padding(
                                                             padding:
                                                                 EdgeInsetsDirectional
@@ -547,8 +522,65 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                                                         0),
                                                             child: Text(
                                                               getJsonField(
-                                                                decomisosDesposteItem,
-                                                                r'''$.numero_animal''',
+                                                                ingresosItem,
+                                                                r'''$.cantidad_animales''',
+                                                              )
+                                                                  .toString()
+                                                                  .maybeHandleOverflow(
+                                                                    maxChars:
+                                                                        20,
+                                                                    replacement:
+                                                                        '…',
+                                                                  ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyText1,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment.end,
+                                                    children: [
+                                                      Text(
+                                                        'Tipo',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .subtitle1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Hind Siliguri',
+                                                                  fontSize: 14,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                ),
+                                                      ),
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        5,
+                                                                        0,
+                                                                        5,
+                                                                        0),
+                                                            child: Text(
+                                                              getJsonField(
+                                                                ingresosItem,
+                                                                r'''$.tipo_ganado''',
                                                               )
                                                                   .toString()
                                                                   .maybeHandleOverflow(
@@ -572,8 +604,7 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
+                                                  MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Column(
                                                   mainAxisSize:
@@ -582,7 +613,7 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                                       CrossAxisAlignment.end,
                                                   children: [
                                                     Text(
-                                                      'Procedencia:',
+                                                      'Placa',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -594,19 +625,7 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                                               ),
                                                     ),
                                                     Text(
-                                                      'Proveedor:',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .subtitle2
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Hind Siliguri',
-                                                                fontSize: 12,
-                                                              ),
-                                                    ),
-                                                    Text(
-                                                      'Tipo:',
+                                                      'Finca',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -619,39 +638,21 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                                     ),
                                                   ],
                                                 ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(5, 0, 0, 0),
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Text(
+                                                Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5, 0, 0, 0),
+                                                      child: Text(
                                                         getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.nombre_procedencia''',
-                                                        ).toString(),
-                                                        textAlign:
-                                                            TextAlign.start,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                ),
-                                                      ),
-                                                      Text(
-                                                        getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.nombre_proveedor''',
+                                                          ingresosItem,
+                                                          r'''$.placa''',
                                                         ).toString(),
                                                         style:
                                                             FlutterFlowTheme.of(
@@ -665,10 +666,16 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                                                           .w600,
                                                                 ),
                                                       ),
-                                                      Text(
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5, 0, 0, 0),
+                                                      child: Text(
                                                         getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.tipo_animal''',
+                                                          ingresosItem,
+                                                          r'''$.finca''',
                                                         ).toString(),
                                                         style:
                                                             FlutterFlowTheme.of(
@@ -682,10 +689,178 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                                                           .w600,
                                                                 ),
                                                       ),
-                                                    ],
-                                                  ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.end,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  15, 0, 0, 0),
+                                                      child: Text(
+                                                        'Proveedor',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .subtitle2
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Hind Siliguri',
+                                                                  fontSize: 12,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  15, 0, 0, 0),
+                                                      child: Text(
+                                                        'Guía ICA',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .subtitle2
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Hind Siliguri',
+                                                                  fontSize: 12,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5, 0, 0, 0),
+                                                      child: Text(
+                                                        getJsonField(
+                                                          ingresosItem,
+                                                          r'''$.proveedor''',
+                                                        ).toString(),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5, 0, 0, 0),
+                                                      child: Text(
+                                                        getJsonField(
+                                                          ingresosItem,
+                                                          r'''$.numero_guia''',
+                                                        ).toString(),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
                                               ],
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0, 5, 0, 0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Text(
+                                                    'Entrada:',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .subtitle1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Hind Siliguri',
+                                                          fontSize: 14,
+                                                        ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                10, 0, 0, 0),
+                                                    child: Text(
+                                                      valueOrDefault<String>(
+                                                        getJsonField(
+                                                          ingresosItem,
+                                                          r'''$.fecha_entrada''',
+                                                        ).toString(),
+                                                        '0',
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .subtitle1
+                                                          .override(
+                                                            fontFamily:
+                                                                'Hind Siliguri',
+                                                            fontSize: 14,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                10, 0, 0, 0),
+                                                    child: Text(
+                                                      valueOrDefault<String>(
+                                                        getJsonField(
+                                                          ingresosItem,
+                                                          r'''$.hora''',
+                                                        ).toString(),
+                                                        '0',
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .subtitle1
+                                                          .override(
+                                                            fontFamily:
+                                                                'Hind Siliguri',
+                                                            fontSize: 14,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ],
                                         ),
@@ -706,8 +881,8 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                                 borderRadius: 8,
                                                 borderWidth: 1,
                                                 buttonSize: 40,
-                                                icon: Icon(
-                                                  Icons.search_rounded,
+                                                icon: FaIcon(
+                                                  FontAwesomeIcons.balanceScale,
                                                   color: Color(0xFF57636C),
                                                   size: 20,
                                                 ),
@@ -716,61 +891,10 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                                     context,
                                                     MaterialPageRoute(
                                                       builder: (context) =>
-                                                          DetallesDecomisoWidget(
-                                                        decomiso: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.secuencia_decomiso''',
-                                                        ).toString(),
-                                                        numeroanimal:
-                                                            getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.numero_animal''',
-                                                        ).toString(),
-                                                        orden: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.orden_produccion''',
-                                                        ).toString(),
-                                                        procedencia:
-                                                            getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.nombre_procedencia''',
-                                                        ).toString(),
-                                                        proveedor: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.nombre_proveedor''',
-                                                        ).toString(),
-                                                        tipoanimal:
-                                                            getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.tipo_animal''',
-                                                        ).toString(),
-                                                        fecha: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.fecha_decomiso''',
-                                                        ).toString(),
-                                                        hora: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.hora_decomiso''',
-                                                        ).toString(),
-                                                        concepto: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.concepto_decomiso''',
-                                                        ).toString(),
-                                                        patologia: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.patologia''',
-                                                        ).toString(),
-                                                        organo: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.organo''',
-                                                        ).toString(),
-                                                        url: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.url_video''',
-                                                        ).toString(),
-                                                        politica: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.politica''',
+                                                          PesajeTotalLoteWidget(
+                                                        lote: getJsonField(
+                                                          ingresosItem,
+                                                          r'''$.lote_ingreso''',
                                                         ).toString(),
                                                       ),
                                                     ),
@@ -787,7 +911,7 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                                 borderWidth: 1,
                                                 buttonSize: 40,
                                                 icon: Icon(
-                                                  Icons.slow_motion_video,
+                                                  Icons.library_add_rounded,
                                                   color: Color(0xFF57636C),
                                                   size: 20,
                                                 ),
@@ -796,61 +920,10 @@ class _DecomisosDesposteWidgetState extends State<DecomisosDesposteWidget> {
                                                     context,
                                                     MaterialPageRoute(
                                                       builder: (context) =>
-                                                          EvidenciaDecomisoWidget(
-                                                        decomiso: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.secuencia_decomiso''',
-                                                        ).toString(),
-                                                        numeroanimal:
-                                                            getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.numero_animal''',
-                                                        ).toString(),
-                                                        orden: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.orden_produccion''',
-                                                        ).toString(),
-                                                        procedencia:
-                                                            getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.nombre_procedencia''',
-                                                        ).toString(),
-                                                        proveedor: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.nombre_proveedor''',
-                                                        ).toString(),
-                                                        tipoanimal:
-                                                            getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.tipo_animal''',
-                                                        ).toString(),
-                                                        fecha: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.fecha_decomiso''',
-                                                        ).toString(),
-                                                        hora: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.hora_decomiso''',
-                                                        ).toString(),
-                                                        concepto: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.concepto_decomiso''',
-                                                        ).toString(),
-                                                        patologia: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.patologia''',
-                                                        ).toString(),
-                                                        organo: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.organo''',
-                                                        ).toString(),
-                                                        url: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.url_video''',
-                                                        ).toString(),
-                                                        politica: getJsonField(
-                                                          decomisosDesposteItem,
-                                                          r'''$.politica''',
+                                                          PesajePieAnimalesWidget(
+                                                        lote: getJsonField(
+                                                          ingresosItem,
+                                                          r'''$.lote_ingreso''',
                                                         ).toString(),
                                                       ),
                                                     ),

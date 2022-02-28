@@ -563,8 +563,9 @@ class _PesajeTotalLoteWidgetState extends State<PesajeTotalLoteWidget> {
                                           color: Color(0xFF57636C),
                                           size: 20,
                                         ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
+                                        onPressed: () async {
+                                          await launchURL(
+                                              'https://wa.me/573178835447');
                                         },
                                       ),
                                     ),
@@ -581,8 +582,9 @@ class _PesajeTotalLoteWidgetState extends State<PesajeTotalLoteWidget> {
                                           color: Color(0xFF57636C),
                                           size: 20,
                                         ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
+                                        onPressed: () async {
+                                          await launchURL(
+                                              'mailto:ceagrodex@parquecrea.com?subject=Dudas%20Pesaje%20de%20Animales%20Ceagrodex%20Infocea1.0&body=Por%20favor%20ayudarme%20con%20la%20información%20que%20aparece%20en%20la%20Plataforma.%0A%0D%0AMuchas%20gracias');
                                         },
                                       ),
                                     ),

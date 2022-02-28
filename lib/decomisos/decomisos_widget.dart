@@ -8,8 +8,8 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../main.dart';
 import 'dart:ui';
-import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,19 +21,9 @@ class DecomisosWidget extends StatefulWidget {
 }
 
 class _DecomisosWidgetState extends State<DecomisosWidget> {
-  ApiCallResponse decomisoSacrificio;
-  TextEditingController fecFinController;
-  TextEditingController fecIniController;
+  DateTime datePicked1;
+  DateTime datePicked2;
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-    fecFinController =
-        TextEditingController(text: functions.fechasSemana('hoy'));
-    fecIniController =
-        TextEditingController(text: functions.fechasSemana('hoy'));
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -134,7 +124,7 @@ class _DecomisosWidgetState extends State<DecomisosWidget> {
                                         fillColor: FlutterFlowTheme.of(context)
                                             .tertiaryColor,
                                         icon: Icon(
-                                          Icons.cancel_rounded,
+                                          Icons.policy_rounded,
                                           color: Color(0xFF57636C),
                                           size: 20,
                                         ),
@@ -206,248 +196,8 @@ class _DecomisosWidgetState extends State<DecomisosWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 8, 0),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width * 0.4,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(8),
-                                border: Border.all(
-                                  color: Color(0xFFCFD4DB),
-                                  width: 1,
-                                ),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12, 5, 12, 5),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Fecha inicio',
-                                          style: FlutterFlowTheme.of(context)
-                                              .subtitle2
-                                              .override(
-                                                fontFamily: 'Lexend Deca',
-                                                color: Color(0xFF57636C),
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                        ),
-                                        Container(
-                                          width: 100,
-                                          decoration: BoxDecoration(),
-                                          child: TextFormField(
-                                            controller: fecIniController,
-                                            obscureText: false,
-                                            decoration: InputDecoration(
-                                              isDense: true,
-                                              enabledBorder:
-                                                  UnderlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: Color(0x00000000),
-                                                  width: 1,
-                                                ),
-                                                borderRadius:
-                                                    const BorderRadius.only(
-                                                  topLeft: Radius.circular(4.0),
-                                                  topRight:
-                                                      Radius.circular(4.0),
-                                                ),
-                                              ),
-                                              focusedBorder:
-                                                  UnderlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: Color(0x00000000),
-                                                  width: 1,
-                                                ),
-                                                borderRadius:
-                                                    const BorderRadius.only(
-                                                  topLeft: Radius.circular(4.0),
-                                                  topRight:
-                                                      Radius.circular(4.0),
-                                                ),
-                                              ),
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .subtitle1
-                                                .override(
-                                                  fontFamily: 'Hind Siliguri',
-                                                  fontSize: 12,
-                                                ),
-                                            maxLines: 1,
-                                            keyboardType:
-                                                TextInputType.datetime,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Icon(
-                                      Icons.date_range_outlined,
-                                      color: Color(0xFF57636C),
-                                      size: 24,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.4,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(8),
-                              border: Border.all(
-                                color: Color(0xFFCFD4DB),
-                                width: 1,
-                              ),
-                            ),
-                            child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 5, 12, 5),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Fecha fin',
-                                        style: FlutterFlowTheme.of(context)
-                                            .subtitle2
-                                            .override(
-                                              fontFamily: 'Lexend Deca',
-                                              color: Color(0xFF57636C),
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.normal,
-                                            ),
-                                      ),
-                                      Container(
-                                        width: 100,
-                                        decoration: BoxDecoration(),
-                                        child: TextFormField(
-                                          controller: fecFinController,
-                                          obscureText: false,
-                                          decoration: InputDecoration(
-                                            isDense: true,
-                                            enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0x00000000),
-                                                width: 1,
-                                              ),
-                                              borderRadius:
-                                                  const BorderRadius.only(
-                                                topLeft: Radius.circular(4.0),
-                                                topRight: Radius.circular(4.0),
-                                              ),
-                                            ),
-                                            focusedBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0x00000000),
-                                                width: 1,
-                                              ),
-                                              borderRadius:
-                                                  const BorderRadius.only(
-                                                topLeft: Radius.circular(4.0),
-                                                topRight: Radius.circular(4.0),
-                                              ),
-                                            ),
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .subtitle1
-                                              .override(
-                                                fontFamily: 'Hind Siliguri',
-                                                fontSize: 12,
-                                              ),
-                                          textAlign: TextAlign.start,
-                                          maxLines: 1,
-                                          keyboardType: TextInputType.datetime,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Icon(
-                                    Icons.date_range_outlined,
-                                    color: Color(0xFF57636C),
-                                    size: 24,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.2,
-                            height: 50,
-                            decoration: BoxDecoration(),
-                            child: Align(
-                              alignment: AlignmentDirectional(-1, 0),
-                              child: FlutterFlowIconButton(
-                                borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 50,
-                                icon: Icon(
-                                  Icons.youtube_searched_for_rounded,
-                                  color: Color(0xFF9E9E9E),
-                                  size: 25,
-                                ),
-                                onPressed: () async {
-                                  decomisoSacrificio =
-                                      await DecomisosSacrificiosCall.call(
-                                    cliente: FFAppState().usuarioId.toString(),
-                                    inicio: fecIniController.text,
-                                    fin: fecFinController.text,
-                                  );
-                                  if (!decomisoSacrificio.succeeded) {
-                                    await showDialog(
-                                      context: context,
-                                      builder: (alertDialogContext) {
-                                        return AlertDialog(
-                                          title: Text('Error de conexión'),
-                                          content: Text(
-                                              'No hemos podido establer conexión con la base de datos, por favor internar más tarde.'),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () => Navigator.pop(
-                                                  alertDialogContext),
-                                              child: Text('Cerrar'),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    );
-                                  }
-
-                                  setState(() {});
-                                },
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -464,6 +214,130 @@ class _DecomisosWidgetState extends State<DecomisosWidget> {
                         ),
                       ],
                     ),
+                    Text(
+                      'Seleccionar las fechas para la busqueda:',
+                      textAlign: TextAlign.start,
+                      style: FlutterFlowTheme.of(context).bodyText1,
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 10),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 8, 0),
+                      child: InkWell(
+                        onTap: () async {
+                          await DatePicker.showDatePicker(
+                            context,
+                            showTitleActions: true,
+                            onConfirm: (date) {
+                              setState(() => datePicked1 = date);
+                            },
+                            currentTime: getCurrentTimestamp,
+                            minTime: DateTime(0, 0, 0),
+                          );
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.45,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(
+                              color: Color(0xFFCFD4DB),
+                              width: 1,
+                            ),
+                          ),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(12, 5, 12, 5),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  valueOrDefault<String>(
+                                    dateTimeFormat('d/M/y', datePicked1),
+                                    'Fecha inicio',
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: Color(0xFF57636C),
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                ),
+                                Icon(
+                                  Icons.date_range_outlined,
+                                  color: Color(0xFF57636C),
+                                  size: 24,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () async {
+                        await DatePicker.showDatePicker(
+                          context,
+                          showTitleActions: true,
+                          onConfirm: (date) {
+                            setState(() => datePicked2 = date);
+                          },
+                          currentTime: getCurrentTimestamp,
+                          minTime: DateTime(0, 0, 0),
+                        );
+                      },
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.45,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(
+                            color: Color(0xFFCFD4DB),
+                            width: 1,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(12, 5, 12, 5),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                valueOrDefault<String>(
+                                  dateTimeFormat('d/M/y', datePicked2),
+                                  'Fecha fin',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF57636C),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                              Icon(
+                                Icons.date_range_outlined,
+                                color: Color(0xFF57636C),
+                                size: 24,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -473,8 +347,8 @@ class _DecomisosWidgetState extends State<DecomisosWidget> {
                   child: FutureBuilder<ApiCallResponse>(
                     future: DecomisosSacrificiosCall.call(
                       cliente: FFAppState().usuarioId.toString(),
-                      inicio: fecIniController.text,
-                      fin: fecFinController.text,
+                      inicio: dateTimeFormat('d/M/y', datePicked1),
+                      fin: dateTimeFormat('d/M/y', datePicked2),
                     ),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
@@ -853,7 +727,7 @@ class _DecomisosWidgetState extends State<DecomisosWidget> {
                                                         decomiso: getJsonField(
                                                           decomisosSacrificiosItem,
                                                           r'''$.secuencia_decomiso''',
-                                                        ),
+                                                        ).toString(),
                                                         numeroanimal:
                                                             getJsonField(
                                                           decomisosSacrificiosItem,
@@ -862,7 +736,7 @@ class _DecomisosWidgetState extends State<DecomisosWidget> {
                                                         orden: getJsonField(
                                                           decomisosSacrificiosItem,
                                                           r'''$.orden_produccion''',
-                                                        ),
+                                                        ).toString(),
                                                         procedencia:
                                                             getJsonField(
                                                           decomisosSacrificiosItem,
@@ -929,7 +803,7 @@ class _DecomisosWidgetState extends State<DecomisosWidget> {
                                                         decomiso: getJsonField(
                                                           decomisosSacrificiosItem,
                                                           r'''$.secuencia_decomiso''',
-                                                        ),
+                                                        ).toString(),
                                                         numeroanimal:
                                                             getJsonField(
                                                           decomisosSacrificiosItem,
@@ -938,7 +812,7 @@ class _DecomisosWidgetState extends State<DecomisosWidget> {
                                                         orden: getJsonField(
                                                           decomisosSacrificiosItem,
                                                           r'''$.orden_produccion''',
-                                                        ),
+                                                        ).toString(),
                                                         procedencia:
                                                             getJsonField(
                                                           decomisosSacrificiosItem,
