@@ -1267,7 +1267,7 @@ class _EvidenciaDecomisoWidgetState extends State<EvidenciaDecomisoWidget> {
                                         ),
                                         onPressed: () async {
                                           await launchURL(
-                                              'https://wa.me/573178835447');
+                                              'https://wa.me/573153766646');
                                         },
                                       ),
                                     ),
@@ -1286,7 +1286,7 @@ class _EvidenciaDecomisoWidgetState extends State<EvidenciaDecomisoWidget> {
                                         ),
                                         onPressed: () async {
                                           await launchURL(
-                                              'mailto:ceagrodex@parquecrea.com?subject=Dudas%20Evidencia%20de%20Decomiso%20Ceagrodex%20Infocea1.0&body=Por%20favor%20ayudarme%20con%20la%20información%20sobre%20el%20decomiso%20que%20aparece%20en%20la%20Plataforma.%0A%0D%0AMuchas%20gracias');
+                                              'mailto:planta@ceagrodex.com.co?subject=Dudas%20Evidencia%20de%20Decomiso%20Ceagrodex%20Infocea1.0&body=Por%20favor%20ayudarme%20con%20la%20información%20sobre%20el%20decomiso%20que%20aparece%20en%20la%20Plataforma.%0A%0D%0AMuchas%20gracias');
                                         },
                                       ),
                                     ),

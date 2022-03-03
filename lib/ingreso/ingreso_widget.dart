@@ -214,7 +214,7 @@ class _IngresoWidgetState extends State<IngresoWidget> {
                   child: InkWell(
                     onTap: () async {
                       await launchURL(
-                          'mailto:ceagrodex@parquecrea.com?subject=Recuperar%20Contraseña%20Ceagrodex%20Infocea1.0&body=Por%20favor%20ayudarme%20con%20la%20recuperación%20de%20la%20contraseña%20del%20usuario%20con%20el%20correo:%0A%0D%0AMuchas%20gracias');
+                          'mailto:planta@ceagrodex.com.co?subject=Recuperar%20Contraseña%20Ceagrodex%20Infocea1.0&body=Por%20favor%20ayudarme%20con%20la%20recuperación%20de%20la%20contraseña%20del%20usuario%20con%20el%20correo:%0A%0D%0AMuchas%20gracias');
                     },
                     child: Text(
                       '¿Olvido su contraseña?',
@@ -343,7 +343,7 @@ class _IngresoWidgetState extends State<IngresoWidget> {
                 child: InkWell(
                   onTap: () async {
                     await launchURL(
-                        'mailto:ceagrodex@parquecrea.com?subject=Crear%Cuenta%20de%20Usuario%20Ceagrodex%20Infocea1.0&body=Por%20favor%20ayudarme%20con%20la%20creación%20de%20una%20cuenta%20de%20usuario%20con%20el%20correo:%0A%0D%0AMuchas%20gracias');
+                        'mailto:planta@ceagrodex.com.co?subject=Crear%Cuenta%20de%20Usuario%20Ceagrodex%20Infocea1.0&body=Por%20favor%20ayudarme%20con%20la%20creación%20de%20una%20cuenta%20de%20usuario%20con%20el%20correo:%0A%0D%0AMuchas%20gracias');
                   },
                   child: Text(
                     'Envíe un correo ',
